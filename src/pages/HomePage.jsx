@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom';
 function HomePage() {
   const navigate = useNavigate();
   const [buttons] = useState([
-    { id: 1, label: 'Multi-Lang Support', path: '/multi-lang-support' }
+    { id: 1, label: 'Multi-Lang Support', path: '/multi-lang-support' },
+    { id: 1, label: 'Countdown', path: '/countdown' }
   ]);
 
   const handleButtonClick = (path) => {

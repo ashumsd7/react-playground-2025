@@ -12,6 +12,7 @@ import InvoicePage from './pages/InvoicePage';
 import Navbar from '@components/base/Navbar';
 import { useNavigate } from 'react-router-dom';
 import MultiLangSupport from './pages/MultiLangSupport';
+import CountDownTimer from './pages/CountDownTimer';
 
 const Main = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -40,6 +41,10 @@ const Main = () => {
       element: <MultiLangSupport />,
     },
     {
+      path: '/countdown',
+      element: <CountDownTimer />,
+    },
+    {
       path: '/login',
       element: <LoginPage isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />,
     },
@@ -54,14 +59,14 @@ const Main = () => {
   ]);
 
   return (
-    <StrictMode>
+
       <div>
         <Navbar isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
         <div className='m-10'>
           <RouterProvider router={router} />
         </div>
       </div>
-    </StrictMode>
+
   );
 };
 
