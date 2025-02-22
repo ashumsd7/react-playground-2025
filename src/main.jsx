@@ -13,6 +13,7 @@ import Navbar from '@components/base/Navbar';
 import { useNavigate } from 'react-router-dom';
 import MultiLangSupport from './pages/MultiLangSupport';
 import CountDownTimer from './pages/CountDownTimer';
+import InfiniteScroll from './pages/InfiniteScroll';
 
 const Main = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -39,6 +40,10 @@ const Main = () => {
     {
       path: '/multi-lang-support',
       element: <MultiLangSupport />,
+    },
+    {
+      path: '/infinite-scroll',
+      element: <InfiniteScroll/>,
     },
     {
       path: '/countdown',
