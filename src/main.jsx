@@ -1,54 +1,68 @@
 import '@styles/custom.css';
 import '@styles/tailwind.css';
 
-import { StrictMode } from 'react';
+import { StrictMode, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import App from './App';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
+import InvoicePage from './pages/InvoicePage';
+import Navbar from '@components/base/Navbar';
+import { useNavigate } from 'react-router-dom';
+import MultiLangSupport from './pages/MultiLangSupport';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-  },
-  {
-    path: '/home',
-    element: <HomePage />,
-  },
-]);
+const Main = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <div>
-      <nav className='bg-gray-800 p-4'>
-        <div className='flex justify-between'>
-          <div className='flex space-x-4'>
-          <div>
-            <a href='/' className='text-white hover:text-gray-300'>
-              /
-            </a>
-          </div>
-          <div>
-            <a href='/home' className='text-white hover:text-gray-300'>
-              Home
-            </a>
-          </div>
-          </div>
-          <div className='flex space-x-4'>
-            <a href='/test' className='text-white hover:text-gray-300'>
-              Test
-            </a>
-            <a href='/list' className='text-white hover:text-gray-300'>
-              List
-            </a>
-          </div>
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+ 
+  };
+
+  const ProtectedRoute = ({ children }) => {
+    return isLoggedIn ? children : <LoginPage />;
+  };
+
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <App />,
+    },
+    {
+      path: '/home',
+      element: <HomePage />,
+    },
+    {
+      path: '/multi-lang-support',
+      element: <MultiLangSupport />,
+    },
+    {
+      path: '/login',
+      element: <LoginPage isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />,
+    },
+    {
+      path: '/invoice',
+      element: (
+        <ProtectedRoute>
+          <InvoicePage />
+        </ProtectedRoute>
+      ),
+    },
+  ]);
+
+  return (
+    <StrictMode>
+      <div>
+        <Navbar isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
+        <div className='m-10'>
+          <RouterProvider router={router} />
         </div>
-      </nav>
-      <div className='m-10'>
-        <RouterProvider router={router} />
       </div>
-    </div>
-  </StrictMode>
-);
+    </StrictMode>
+  );
+};
+
+createRoot(document.getElementById('root')).render(<Main />);
