@@ -7,7 +7,8 @@ function HomePage() {
     { id: 1, label: 'Multi-Lang Support', path: '/multi-lang-support' },
     { id: 1, label: 'Countdown', path: '/countdown' },
     { id: 1, label: 'InfiniteScroll', path: '/infinite-scroll' },
-    { id: 1, label: 'Accordion', path: '/accordion' }
+    { id: 1, label: 'Accordion', path: '/accordion' },
+    { id: 1, label: 'NestedComments', path: '/nested-comments' },
   ]);
 
   const handleButtonClick = (path) => {

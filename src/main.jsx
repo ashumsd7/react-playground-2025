@@ -15,6 +15,7 @@ import MultiLangSupport from './pages/MultiLangSupport';
 import CountDownTimer from './pages/CountDownTimer';
 import InfiniteScroll from './pages/InfiniteScroll';
 import Accordion from './pages/Accordion';
+import NestedComments from './pages/NestedComments';
 
 const Main = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -50,10 +51,14 @@ const Main = () => {
       path: '/countdown',
       element: <CountDownTimer />,
     },
-    {
-      path: '/accordion',
-      element: <Accordion/>,
-    },
+      {
+        path: '/accordion',
+        element: <Accordion/>,
+      },
+      {
+        path: '/nested-comments',
+        element: <NestedComments/>,
+      },
     {
       path: '/login',
       element: <LoginPage isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />,
