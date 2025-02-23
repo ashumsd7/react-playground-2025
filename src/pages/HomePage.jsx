@@ -9,6 +9,7 @@ function HomePage() {
     { id: 1, label: 'InfiniteScroll', path: '/infinite-scroll' },
     { id: 1, label: 'Accordion', path: '/accordion' },
     { id: 1, label: 'NestedComments', path: '/nested-comments' },
+    { id: 1, label: 'ImageSlider', path: '/image-slider' },
   ]);
 
   const handleButtonClick = (path) => {
@@ -19,13 +20,13 @@ function HomePage() {
     <div>
       <div className='flex space-x-4'>
         {buttons.map((button) => (
-          <button
+          <div
             key={button.id}
             onClick={() => handleButtonClick(button.path)}
-            className='rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-700'
+            className='cursor-pointer rounded bg-white shadow-md p-4 hover:shadow-lg'
           >
-            {button.label}
-          </button>
+            <h2 className='text-lg font-bold text-gray-800'>{button.label}</h2>
+          </div>
         ))}
       </div>
     </div>

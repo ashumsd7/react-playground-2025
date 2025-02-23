@@ -16,6 +16,7 @@ import CountDownTimer from './pages/CountDownTimer';
 import InfiniteScroll from './pages/InfiniteScroll';
 import Accordion from './pages/Accordion';
 import NestedComments from './pages/NestedComments';
+import ImageSlider from './pages/ImageSlider';
 
 const Main = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -54,6 +55,10 @@ const Main = () => {
       {
         path: '/accordion',
         element: <Accordion/>,
+      },
+      {
+        path: '/image-slider',
+        element: <ImageSlider/>,
       },
       {
         path: '/nested-comments',
