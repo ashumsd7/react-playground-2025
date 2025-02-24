@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 const data = [
   'https://picsum.photos/600/300',
   'https://picsum.photos/601/300',
@@ -9,6 +9,16 @@ const data = [
 function ImageSlider() {
 
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveImageIndex((prevIndex) => (prevIndex + 1) % data.length);
+    }, 3000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
   return (
     <div>
       <h1>ImageSlider</h1>

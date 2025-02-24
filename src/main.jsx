@@ -17,6 +17,7 @@ import InfiniteScroll from './pages/InfiniteScroll';
 import Accordion from './pages/Accordion';
 import NestedComments from './pages/NestedComments';
 import ImageSlider from './pages/ImageSlider';
+import Pagination from './pages/Pagination';
 
 const Main = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -64,6 +65,12 @@ const Main = () => {
         path: '/nested-comments',
         element: <NestedComments/>,
       },
+      {
+        path: '/pagination',
+        element: <Pagination/>,
+      },
+    
+    
     {
       path: '/login',
       element: <LoginPage isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />,
