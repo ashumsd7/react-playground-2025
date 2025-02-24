@@ -11,6 +11,7 @@ function HomePage() {
     { id: 1, label: 'NestedComments', path: '/nested-comments' },
     { id: 1, label: 'ImageSlider', path: '/image-slider' },
     { id: 1, label: 'Pagination', path: '/pagination' },
+    { id: 1, label: 'YoutubeChat', path: '/yt-chat' },
   ]);
 
   const handleButtonClick = (path) => {

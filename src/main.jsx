@@ -18,6 +18,7 @@ import Accordion from './pages/Accordion';
 import NestedComments from './pages/NestedComments';
 import ImageSlider from './pages/ImageSlider';
 import Pagination from './pages/Pagination';
+import YoutubeChat from './pages/YoutubeChat';
 
 const Main = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -68,6 +69,10 @@ const Main = () => {
       {
         path: '/pagination',
         element: <Pagination/>,
+      },
+      {
+        path: '/yt-chat',
+        element: <YoutubeChat/>,
       },
     
     
