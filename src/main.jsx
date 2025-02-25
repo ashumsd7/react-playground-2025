@@ -19,6 +19,7 @@ import NestedComments from './pages/NestedComments';
 import ImageSlider from './pages/ImageSlider';
 import Pagination from './pages/Pagination';
 import YoutubeChat from './pages/YoutubeChat';
+import AutoComplete from './pages/AutoComplete';
 
 const Main = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -73,6 +74,10 @@ const Main = () => {
       {
         path: '/yt-chat',
         element: <YoutubeChat/>,
+      },
+      {
+        path: '/autocomplete',
+        element: <AutoComplete/>,
       },
     
     

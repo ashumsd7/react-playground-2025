@@ -12,6 +12,7 @@ function HomePage() {
     { id: 1, label: 'ImageSlider', path: '/image-slider' },
     { id: 1, label: 'Pagination', path: '/pagination' },
     { id: 1, label: 'YoutubeChat', path: '/yt-chat' },
+    { id: 1, label: 'AutoComplete', path: '/autocomplete' },
   ]);
 
   const handleButtonClick = (path) => {
@@ -20,7 +21,7 @@ function HomePage() {
 
   return (
     <div>
-      <div className='flex space-x-4'>
+      <div className='flex space-x-4 flex-wrap gap-10'>
         {buttons.map((button) => (
           <div
             key={button.id}

@@ -120,13 +120,13 @@ function YoutubeChat() {
   return (
     <div>
       <h2 className='mb-2 text-3xl font-bold text-red-600'>Youtube </h2>
-      <div className='flex gap-4'>
+      <div className='flex gap-4 flex-wrap'>
         <iframe
-          className='h-[600px] w-2/3'
+          className='h-[600px] md:w-2/3 w-full'
           src='https://www.youtube.com/embed/dQw4w9WgXcQ'
           title='Youtube'
         />
-        <div className='h-[600px] w-1/3 flex gap-4   border p-5 mx-h-[600px] overflow-y-auto  flex-col' ref={myRef}>
+        <div className='h-[600px] md:w-1/3 w-full flex gap-4   border p-5 mx-h-[600px] overflow-y-auto  flex-col' ref={myRef}>
           {comments?.map((item) => (
             <SingleComment key={item.id} {...item} />
           ))}

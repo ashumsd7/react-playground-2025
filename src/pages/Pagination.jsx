@@ -57,7 +57,7 @@ function Pagination() {
           Showing {currentPage * 10 + 1} to {currentPage * 10 + LIMIT} of {total} products
         </p>
       </div>
-      <div className='mt-1 flex items-center justify-between border p-4'>
+      <div className='mt-1 flex items-center justify-between border p-4 flex-wrap gap-4'>
         <button onClick={() => setCurrentPage(currentPage - 1)}>Previous</button>
         {totalPages?.map((page) => (
           <button
